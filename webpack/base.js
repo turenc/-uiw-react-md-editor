@@ -24,7 +24,7 @@ export default {
     errorDetails: true
   },
   module: {
-    rules: arrayFilterEmpty([rules.javascriptRule, rules.mjavascriptRule, rules.typescriptRule, rules.htmlRule, rules.imagesRule, rules.fontsRule, rules.cssRule, ...rules.lessRules, ...rules.sassRules, ...rules.svgRules])
+    rules: arrayFilterEmpty([rules.mjsRule, rules.typescriptRule, rules.htmlRule, rules.imagesRule, rules.fontsRule, rules.cssRule, ...rules.lessRules, ...rules.sassRules, ...rules.svgRules])
   },
   plugins: arrayFilterEmpty([
     plugins.htmlWebpackPlugin,

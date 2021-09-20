@@ -2,7 +2,7 @@ import isWindows from "is-windows";
 import { join } from "path";
 import { devServerProxyConfig } from "./dev-server-proxy-config";
 
-const defaultPort = 1234;
+const defaultPort = 3002;
 
 const devServerHost = isWindows() ? "localhost" : "0.0.0.0";
 
@@ -20,5 +20,11 @@ export const devServerConfig = {
   host: devServerHost,
   open: true,
   // writeToDisk: true,
-  compress: true
+  compress: true,
+  client: {
+    overlay: {
+      errors: true,
+      warnings: false,
+    },
+  },
 };
