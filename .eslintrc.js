@@ -1,10 +1,12 @@
 const path = require("path");
 module.exports = {
-  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
+  //parser: "@typescript-eslint/parser", // Specifies the ESLint parser
+  // plugins: ["@typescript-eslint", "react", "import"],
   plugins: ["@typescript-eslint", "react", "import"],
   env: {
-    browser: true,
-    jest: true
+    browser : true,
+    node : true,
+    es6 : true
   },
   extends: [
     // "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
@@ -17,16 +19,23 @@ module.exports = {
     // "plugin:import/typescript",
     // "react-app"
   ],
+  ecmaFeatures: {
+    modules: true,
+    spread : true,
+    restParams : true
+  },
   parserOptions: {
     project: path.resolve(__dirname, "./tsconfig.json"),
     tsconfigRootDir: __dirname,
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-    sourceType: "script", // Allows for the use of imports
+    sourceType: "module", // Allows for the use of imports
     ecmaFeatures: {
       jsx: true // Allows for the parsing of JSX
     }
   },
   rules: {
+    "no-unused-vars" : 2,
+    "no-undef" : 2,
     //https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
     "sort-imports": [
       "off",
