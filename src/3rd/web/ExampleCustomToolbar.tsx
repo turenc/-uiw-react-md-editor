@@ -5,7 +5,6 @@ const ExampleCustomToolbar = () => {
   const title: ICommand<string> = {
     name: 'title3',
     keyCommand: 'title3',
-    buttonProps: null,
     icon: <span style={{ padding: '0 5px' }}>Custom Toolbar</span>,
   };
   const [value, setValue] = useState('Hello Markdown!');

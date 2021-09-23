@@ -12,9 +12,9 @@ export default function Textarea(props: TextAreaProps) {
   const { prefixCls, ...other } = props;
   const { markdown, commands, fullscreen, preview, highlightEnable, extraCommands, tabSize, onChange, dispatch } =
     useContext(EditorContext);
-  const textRef = React.useRef<HTMLTextAreaElement>(null);
-  const executeRef = React.useRef<TextAreaCommandOrchestrator>();
-  const statesRef = React.useRef<ExecuteCommandState>({ fullscreen, preview });
+  const textRef: any = React.useRef<HTMLTextAreaElement>();
+  const executeRef: any = React.useRef<TextAreaCommandOrchestrator>();
+  const statesRef: any = React.useRef<ExecuteCommandState>({ fullscreen, preview });
 
   useEffect(() => {
     statesRef.current = { fullscreen, preview, highlightEnable };

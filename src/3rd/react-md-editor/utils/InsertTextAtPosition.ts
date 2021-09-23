@@ -65,10 +65,10 @@ export function insertTextAtPosition(input: HTMLTextAreaElement | HTMLInputEleme
         } else {
           // Otherwise we need to find a nodes for start and end
           let offset = 0;
-          let startNode = null;
-          let endNode = null;
+          let startNode;
+          let endNode;
 
-          while (node && (startNode === null || endNode === null)) {
+          while (node && (startNode === undefined || endNode === undefined)) {
             const nodeLength = node.nodeValue!.length;
 
             // if start of the selection falls into current node

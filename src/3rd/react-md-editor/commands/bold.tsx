@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ICommand, TextState, TextAreaTextApi } from './';
 import { selectWord } from '../utils/markdownUtils';
 
-export const bold: ICommand = {
+export const bold: any = {
   name: 'bold',
   keyCommand: 'bold',
   shortcuts: 'ctrlcmd+b',

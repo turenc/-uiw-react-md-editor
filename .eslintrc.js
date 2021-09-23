@@ -1,23 +1,23 @@
 const path = require("path");
 module.exports = {
-  //parser: "@typescript-eslint/parser", // Specifies the ESLint parser
-  // plugins: ["@typescript-eslint", "react", "import"],
   plugins: ["@typescript-eslint", "react", "import"],
   env: {
     browser : true,
     node : true,
+    amd: true,
+    mocha: true,
     es6 : true
   },
   extends: [
-    // "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     // "prettier/@typescript-eslint", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
     // "prettier/react", // disables react-specific linting rules that conflict with prettier
-    // "eslint:recommended",
-    // "plugin:react/recommended",
-    // "plugin:import/errors",
-    // "plugin:import/warnings",
-    // "plugin:import/typescript",
-    // "react-app"
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "react-app"
   ],
   ecmaFeatures: {
     modules: true,
@@ -25,6 +25,7 @@ module.exports = {
     restParams : true
   },
   parserOptions: {
+    ecmaVersion: 6,
     project: path.resolve(__dirname, "./tsconfig.json"),
     tsconfigRootDir: __dirname,
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
@@ -34,8 +35,10 @@ module.exports = {
     }
   },
   rules: {
-    "no-unused-vars" : 2,
-    "no-undef" : 2,
+    "react/no-children-prop": "off",
+    "unknown": "off",
+    "no-unused-vars" : "off",
+    "no-undef" : "off",
     //https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin/docs/rules
     "sort-imports": [
       "off",
@@ -222,9 +225,9 @@ module.exports = {
       typescript: {
         project: "./tsconfig.json"
       }
-    },
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
     }
+    // "import/parsers": {
+    //   "@typescript-eslint/parser": [".ts", ".tsx"]
+    // }
   }
 };

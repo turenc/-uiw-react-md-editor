@@ -141,9 +141,9 @@ const InternalMDEditor = (
     onChange,
     barPopup: {},
   });
-  const container = useRef<HTMLDivElement>(null);
-  const previewRef = useRef<MarkdownPreviewRef>(null);
-  const enableScrollRef = useRef(enableScroll);
+  const container: any = useRef<HTMLDivElement>();
+  const previewRef: any = useRef<MarkdownPreviewRef>();
+  const enableScrollRef: any = useRef(enableScroll);
 
   useImperativeHandle(ref, () => ({ ...state }));
   useMemo(() => (enableScrollRef.current = enableScroll), [enableScroll]);
@@ -163,8 +163,8 @@ const InternalMDEditor = (
   const cls = [
     className,
     prefixCls,
-    state.preview ? `${prefixCls}-show-${state.preview}` : null,
-    state.fullscreen ? `${prefixCls}-fullscreen` : null,
+    state.preview ? `${prefixCls}-show-${state.preview}` : undefined,
+    state.fullscreen ? `${prefixCls}-fullscreen` : undefined,
   ]
     .filter(Boolean)
     .join(' ')

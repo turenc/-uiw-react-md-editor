@@ -43,7 +43,7 @@ export type TextAreaRef = {
 export default function TextArea(props: ITextAreaProps) {
   const { prefixCls, className, onScroll, renderTextarea, ...otherProps } = props || {};
   const { markdown, scrollTop, commands, extraCommands, onChange, dispatch } = useContext(EditorContext);
-  const textRef = React.useRef<HTMLTextAreaElement>(null);
+  const textRef = React.useRef<HTMLTextAreaElement>();
   const executeRef = React.useRef<TextAreaCommandOrchestrator>();
   const warp = React.createRef<HTMLDivElement>();
   useEffect(() => {
